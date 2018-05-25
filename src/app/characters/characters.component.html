@@ -1,0 +1,23 @@
+<select>
+    <option *ngFor="let characterName of characterNames.results" [value]="characterName.name" [selected]="characterName.selected">{{characterName.name}}</option>
+</select>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">height</th>
+        <th scope="col">mass</th>
+        <th scope="col">hair_color</th>
+        <th scope="col">skin_color</th>
+        <th scope="col">birth_year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
