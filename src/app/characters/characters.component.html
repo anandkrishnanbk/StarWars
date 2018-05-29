@@ -1,23 +1,25 @@
+<h2>{{myCharacterTitle}}</h2>
 <select>
-    <option *ngFor="let characterName of characterNames.results" [value]="characterName.name" [selected]="characterName.selected">{{characterName.name}}</option>
+    <option *ngFor="let characterName of characterNames.results" [value]="characterName.name" [selected]="characterName.selected" (click)="onSelect(characterName)">{{characterName.name}}</option>
 </select>
-<table class="table table-striped">
+<table  *ngIf="characterDetail" class="table table-striped">
     <thead>
-      <tr>
-        <th scope="col">name</th>
+      <tr class="col-12">
         <th scope="col">height</th>
         <th scope="col">mass</th>
-        <th scope="col">hair_color</th>
-        <th scope="col">skin_color</th>
-        <th scope="col">birth_year</th>
+        <th scope="col">hair color</th>
+        <th scope="col">skin color</th>
+        <th scope="col">birthyear</th>
       </tr>
     </thead>
     <tbody>
+      <tr>THe Character name is {{characterDetail.name}}</tr>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>{{characterDetail.height}}</td>
+        <td>{{characterDetail.mass}}</td>
+        <td>{{characterDetail.hair_color}}</td>
+        <td>{{characterDetail.skin_color}}</td>
+        <td>{{characterDetail.birth_year}}</td>
       </tr>
     </tbody>
   </table>

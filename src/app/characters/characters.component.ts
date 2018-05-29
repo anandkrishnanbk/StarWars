@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CharactersService } from '../characters.service';
 @Component({
   selector: 'app-characters',
@@ -7,16 +7,19 @@ import { CharactersService } from '../characters.service';
 })
 export class CharactersComponent implements OnInit {
 private characterNames;
+private characterDetail;
+private myCharacterTitle;
+@Input() characterTitle;
   constructor(private charactersService: CharactersService) { }
 
   ngOnInit() {
     this.charactersService.getCharacters().subscribe(characters => {
       this.characterNames = characters;
-      console.log(characters);
+      this.myCharacterTitle = this.characterTitle;
     });
   }
-  onSelect(event) {
-    console.log(event);
+  onSelect(character) {
+    this.characterDetail = character;
   }
 
 }

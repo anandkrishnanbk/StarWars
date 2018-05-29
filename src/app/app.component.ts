@@ -6,5 +6,9 @@ import { CharactersComponent } from './characters/characters.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private StarwarCharacters;
   title = 'app';
+  constructor() {
+    this.StarwarCharacters = 'Starwar Characters';
+  }
 }
