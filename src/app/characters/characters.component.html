@@ -1,5 +1,5 @@
-<h2>{{myCharacterTitle}}</h2>
-<select>
+<h2 class="mt-4 mb-4 ml-3 mr-3">{{myCharacterTitle}}</h2>
+<select class="m-3">
     <option *ngFor="let characterName of characterNames.results" [value]="characterName.name" [selected]="characterName.selected" (click)="onSelect(characterName)">{{characterName.name}}</option>
 </select>
 <table  *ngIf="characterDetail" class="table table-striped">
