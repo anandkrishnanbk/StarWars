@@ -9,6 +9,7 @@ export class CharactersComponent implements OnInit {
 private characterNames;
 private characterDetail;
 private myCharacterTitle;
+private characterDetailName;
 private films;
 private filmNames;
 @Input() characterTitle;
@@ -22,8 +23,9 @@ private filmNames;
   }
   onSelect(character) {
     this.filmNames = [];
-    this.characterDetail = character;
-      this.films = this.characterDetail.films;
+    const index: number = character.target.selectedIndex;
+    this.characterDetail = this.characterNames.results[index];
+      this.films = this.characterNames.results[index].films;
       for (let i = 0; i < this.films.length; i++) {
         this.charactersService.getFilms(this.films[i]).subscribe(films => {
                this.filmNames.push(films);
