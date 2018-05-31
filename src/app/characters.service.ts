@@ -16,4 +16,7 @@ export class CharactersService {
   getCharacters() {
     return this.http.get(this.charactersUrl);
   }
+  getFilms(films) {
+    return this.http.get(films);
+  }
 }
